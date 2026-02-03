@@ -1,0 +1,184 @@
+.games-page {
+  padding: 20px;
+}
+
+.game-menu {
+  text-align: center;
+}
+
+.game-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 2rem 0;
+}
+
+.game-card {
+  background: white;
+  border: none;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.game-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.game-card.completed {
+  background: linear-gradient(135deg, var(--soft-yellow) 0%, var(--warm-yellow) 100%);
+}
+
+.game-icon {
+  font-size: 2.5rem;
+}
+
+.game-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.check {
+  position: absolute;
+  right: 20px;
+  color: #4CAF50;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Catch Game */
+.catch-game {
+  width: 100%;
+  text-align: center;
+}
+
+.game-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.game-stats {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.catch-area {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.kinder {
+  position: absolute;
+  font-size: 3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: left 0.2s ease, top 0.2s ease;
+  animation: wobble 0.5s ease infinite;
+}
+
+@keyframes wobble {
+  0%, 100% { transform: translate(-50%, -50%) rotate(-5deg); }
+  50% { transform: translate(-50%, -50%) rotate(5deg); }
+}
+
+.game-result {
+  padding: 2rem;
+}
+
+.result-emoji {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* Trivia Game */
+.trivia-game {
+  width: 100%;
+  text-align: center;
+}
+
+.question-counter {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.question-card {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.question-text {
+  font-size: 1.3rem;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.option {
+  background: var(--soft-yellow);
+  border: 2px solid transparent;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-dark);
+}
+
+.option:hover:not(:disabled) {
+  background: var(--warm-yellow);
+  transform: translateX(5px);
+}
+
+.option.correct {
+  background: #C8E6C9;
+  border-color: #4CAF50;
+}
+
+.option.wrong {
+  background: #FFCDD2;
+  border-color: #F44336;
+}
+
+.answer-feedback {
+  margin-top: 1.5rem;
+}
+
+.feedback-correct {
+  color: #4CAF50;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.feedback-wrong {
+  color: var(--deep-rose);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}

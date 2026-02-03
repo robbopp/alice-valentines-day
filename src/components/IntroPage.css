@@ -1,0 +1,30 @@
+.intro-page {
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-content {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro-hearts {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.intro-hearts .heart {
+  margin: 0 5px;
+}
+
+.flower-decoration {
+  font-size: 2rem;
+  margin: 1.5rem 0;
+  letter-spacing: 10px;
+}
+
+.intro-page .title {
+  font-size: 3rem;
+}

@@ -1,0 +1,103 @@
+.question-page {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.floating-hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.floating-heart {
+  position: absolute;
+  top: 100%;
+  animation: rise 6s ease-in infinite;
+  opacity: 0.6;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.question-content {
+  z-index: 1;
+  text-align: center;
+}
+
+.flower-crown {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  letter-spacing: 10px;
+}
+
+.question-title {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.question-text {
+  font-size: 1.8rem;
+  color: var(--text-dark);
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.question-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 100px;
+}
+
+.btn-yes {
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.btn-no {
+  transition: transform 0.15s ease;
+  z-index: 1;
+}
+
+.funny-message {
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  color: var(--deep-rose);
+  font-weight: 500;
+}
+
+/* Mobile touch adjustments */
+@media (max-width: 480px) {
+  .question-title {
+    font-size: 2.5rem;
+  }
+  
+  .question-text {
+    font-size: 1.4rem;
+  }
+  
+  .btn-no {
+    transition: transform 0.1s ease;
+  }
+}
