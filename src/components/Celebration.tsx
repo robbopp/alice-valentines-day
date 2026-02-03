@@ -35,7 +35,7 @@ const Celebration: React.FC = () => {
 
       <div className="celebration-content fade-in">
         <div className="big-heart">
-          <span className="heart">💛</span>
+          <span className="heart">❤️</span>
         </div>
 
         <h1 className="title celebration-title">
@@ -48,7 +48,7 @@ const Celebration: React.FC = () => {
 
         <div className="love-message">
           <p>
-            {HER_NAME}, draga mea, tu faci fiecare zi mai frumoasă. 💛
+            {HER_NAME}, draga mea, tu faci fiecare zi mai frumoasă. ❤️
           </p>
           <p>
             Abia aștept să petrecem Valentine's Day împreună!
@@ -61,12 +61,12 @@ const Celebration: React.FC = () => {
 
         <div className="signature">
           <p>Al tău pentru totdeauna,</p>
-          <p className="from-name">Robi, dragul tău 💛</p>
+          <p className="from-name">Robi, dragul tău ❤️</p>
         </div>
 
         {/* Optional: Add a special message or photo here */}
         <div className="final-touch">
-          <p>Ne vedem pe 14 februarie! 💛</p>
+          <p>Ne vedem pe 14 februarie! ❤️</p>
         </div>
       </div>
     </div>

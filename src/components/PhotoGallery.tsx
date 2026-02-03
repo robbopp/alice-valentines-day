@@ -9,11 +9,11 @@ interface PhotoGalleryProps {
 const photos = [
   {
     src: '/photos/photo1.jpg',
-    caption: 'Prima noastră aventură împreună 💛'
+    caption: 'Prima noastră aventură împreună ❤️'
   },
   {
     src: '/photos/photo2.jpg', 
-    caption: 'Atunci când...'
+    caption: 'Cea mai minunată din univers! ❤️'
   },
   {
     src: '/photos/photo3.jpg',
