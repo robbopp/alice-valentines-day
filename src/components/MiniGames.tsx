@@ -7,22 +7,22 @@ interface MiniGamesProps {
 
 type GameType = 'menu' | 'catch' | 'trivia' | 'complete';
 
-// TODO: Customize these questions about your relationship!
+// Personalizează întrebările despre relația voastră!
 const triviaQuestions = [
   {
-    question: "What's our favorite Italian dish to share?",
-    options: ["Pizza", "Pasta", "Risotto", "Lasagna"],
-    correct: 0 // Change this to the correct answer index
+    question: "Care e mâncarea italiană preferată să o împărțim?",
+    options: ["Pizza", "Paste", "Risotto", "Lasagna"],
+    correct: 0 // Schimbă cu răspunsul corect
   },
   {
-    question: "Where would we love to travel together?",
-    options: ["Paris", "Tokyo", "Bali", "All of them!"],
+    question: "Unde am vrea să călătorim împreună?",
+    options: ["Paris", "Tokyo", "Bali", "Toate!"],
     correct: 3
   },
   {
-    question: "What flower reminds you of me?",
-    options: ["Rose", "Peony", "Tulip", "Sunflower"],
-    correct: 1 // Peony - her favorite!
+    question: "Ce floare îți amintește de mine?",
+    options: ["Trandafir", "Bujor", "Lalea", "Floarea-soarelui"],
+    correct: 1 // Bujor - preferata ei!
   }
 ];
 
@@ -67,8 +67,8 @@ interface GameMenuProps {
 
 const GameMenu: React.FC<GameMenuProps> = ({ onSelectGame, gamesCompleted, allCompleted, onNext }) => (
   <div className="game-menu fade-in">
-    <h1 className="title">Let's Play! 🎮</h1>
-    <p className="subtitle">Complete the games to unlock the surprise!</p>
+    <h1 className="title">Hai să ne jucăm! 🎮</h1>
+    <p className="subtitle">Completează jocurile pentru a debloca surpriza!</p>
     
     <div className="game-options">
       <button 
@@ -76,7 +76,7 @@ const GameMenu: React.FC<GameMenuProps> = ({ onSelectGame, gamesCompleted, allCo
         onClick={() => onSelectGame('catch')}
       >
         <span className="game-icon">🍫</span>
-        <span className="game-name">Catch the Kinder!</span>
+        <span className="game-name">Prinde Kinder-ul!</span>
         {gamesCompleted.has('catch') && <span className="check">✓</span>}
       </button>
       
@@ -85,14 +85,14 @@ const GameMenu: React.FC<GameMenuProps> = ({ onSelectGame, gamesCompleted, allCo
         onClick={() => onSelectGame('trivia')}
       >
         <span className="game-icon">💕</span>
-        <span className="game-name">Love Trivia</span>
+        <span className="game-name">Trivia Dragostei</span>
         {gamesCompleted.has('trivia') && <span className="check">✓</span>}
       </button>
     </div>
 
     {allCompleted && (
       <button className="btn fade-in" onClick={onNext}>
-        Unlock Surprise! 🎁
+        Deblochează Surpriza! 🎁
       </button>
     )}
   </div>
@@ -145,10 +145,10 @@ const CatchGame: React.FC<CatchGameProps> = ({ onComplete }) => {
 
   return (
     <div className="catch-game">
-      <h2 className="game-title">Catch the Kinder! 🍫</h2>
+      <h2 className="game-title">Prinde Kinder-ul! 🍫</h2>
       <div className="game-stats">
-        <span>Score: {score}/{targetScore}</span>
-        <span>Time: {timeLeft}s</span>
+        <span>Scor: {score}/{targetScore}</span>
+        <span>Timp: {timeLeft}s</span>
       </div>
       
       {!gameOver ? (
@@ -166,19 +166,19 @@ const CatchGame: React.FC<CatchGameProps> = ({ onComplete }) => {
           {won ? (
             <>
               <span className="result-emoji">🎉</span>
-              <p>Sweet! You caught them all!</p>
-              <button className="btn" onClick={onComplete}>Continue</button>
+              <p>Bravo! Le-ai prins pe toate!</p>
+              <button className="btn" onClick={onComplete}>Continuă</button>
             </>
           ) : (
             <>
               <span className="result-emoji">😅</span>
-              <p>Almost! Try again?</p>
+              <p>Aproape! Mai încerci?</p>
               <button className="btn" onClick={() => {
                 setScore(0);
                 setTimeLeft(15);
                 setGameOver(false);
               }}>
-                Try Again
+                Încearcă din nou
               </button>
             </>
           )}
@@ -224,8 +224,8 @@ const TriviaGame: React.FC<TriviaGameProps> = ({ onComplete }) => {
 
   return (
     <div className="trivia-game">
-      <h2 className="game-title">Love Trivia 💕</h2>
-      <p className="question-counter">Question {currentQ + 1}/{triviaQuestions.length}</p>
+      <h2 className="game-title">Trivia Dragostei 💕</h2>
+      <p className="question-counter">Întrebarea {currentQ + 1}/{triviaQuestions.length}</p>
       
       <div className="question-card">
         <p className="question-text">{question.question}</p>
@@ -246,18 +246,18 @@ const TriviaGame: React.FC<TriviaGameProps> = ({ onComplete }) => {
         {answered && (
           <div className="answer-feedback fade-in">
             {isCorrect ? (
-              <p className="feedback-correct">💛 You know me so well!</p>
+              <p className="feedback-correct">💛 Mă cunoști atât de bine!</p>
             ) : (
-              <p className="feedback-wrong">Oops! But that's okay 💕</p>
+              <p className="feedback-wrong">Oops! Dar e în regulă 💕</p>
             )}
             
             {isLastQuestion ? (
               <button className="btn" onClick={onComplete}>
-                {allCorrect ? "Perfect Score! 🌟" : "Continue 💕"}
+                {allCorrect ? "Scor Perfect! 🌟" : "Continuă 💕"}
               </button>
             ) : (
               <button className="btn" onClick={nextQuestion}>
-                Next Question
+                Următoarea întrebare
               </button>
             )}
           </div>

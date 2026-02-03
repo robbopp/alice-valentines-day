@@ -13,14 +13,14 @@ const TheQuestion: React.FC<TheQuestionProps> = ({ onYes }) => {
   const [yesScale, setYesScale] = useState(1);
 
   const funnyMessages = [
-    "Are you sure, darling? 🥺",
-    "Think again! 💛",
-    "Pretty please? 🌷",
-    "But I love you! 💛💕💛",
-    "Not an option, darling! 😤",
-    "Try clicking Yes instead 😏",
-    "The button is shy! 🙈",
-    "Nope, can't click that! ✨"
+    "Ești sigură, draga mea? 🥺",
+    "Gândește-te din nou! 💛",
+    "Te rog frumos? 🌷",
+    "Dar te iubesc! 💛💕💛",
+    "Nu e o opțiune, draga mea! 😤",
+    "Încearcă să apeși Da 😏",
+    "Butonul e timid! 🙈",
+    "Nu poți apăsa asta! ✨"
   ];
 
   const [message, setMessage] = useState<string | null>(null);
@@ -68,11 +68,11 @@ const TheQuestion: React.FC<TheQuestionProps> = ({ onYes }) => {
         <div className="flower-crown">🌷💐🌷</div>
         
         <h1 className="title question-title">
-          {HER_NAME}, darling... 💛
+          {HER_NAME}, draga mea... 💛
         </h1>
         
         <p className="question-text">
-          Will you be my Valentine? 💛💕💛
+          Vrei să fii Valentine-ul meu? 💛💕💛
         </p>
 
         <div className="question-buttons">
@@ -81,7 +81,7 @@ const TheQuestion: React.FC<TheQuestionProps> = ({ onYes }) => {
             style={{ transform: `scale(${yesScale})` }}
             onClick={onYes}
           >
-            Yes! 💛
+            Da! 💛
           </button>
           
           <button 
@@ -93,7 +93,7 @@ const TheQuestion: React.FC<TheQuestionProps> = ({ onYes }) => {
             onClick={moveNoButton}
             onTouchStart={moveNoButton}
           >
-            No
+            Nu
           </button>
         </div>
 

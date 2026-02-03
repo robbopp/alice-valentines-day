@@ -43,15 +43,15 @@ const Celebration: React.FC = () => {
         </h1>
 
         <p className="celebration-text">
-          I knew you'd say yes! 🥰
+          Știam că vei spune da! 🥰
         </p>
 
         <div className="love-message">
           <p>
-            {HER_NAME}, darling, you make every day brighter. 💛
+            {HER_NAME}, draga mea, tu faci fiecare zi mai frumoasă. 💛
           </p>
           <p>
-            Can't wait to spend Valentine's Day with you!
+            Abia aștept să petrecem Valentine's Day împreună!
           </p>
         </div>
 
@@ -60,13 +60,13 @@ const Celebration: React.FC = () => {
         </div>
 
         <div className="signature">
-          <p>Forever yours,</p>
-          <p className="from-name">Robi 💛</p>
+          <p>Al tău pentru totdeauna,</p>
+          <p className="from-name">Robi, dragul tău 💛</p>
         </div>
 
         {/* Optional: Add a special message or photo here */}
         <div className="final-touch">
-          <p>See you on February 14th! 💛</p>
+          <p>Ne vedem pe 14 februarie! 💛</p>
         </div>
       </div>
     </div>

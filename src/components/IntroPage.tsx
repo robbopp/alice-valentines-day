@@ -51,10 +51,10 @@ const IntroPage: React.FC<IntroPageProps> = ({ onNext }) => {
             <span className="heart" style={{ animationDelay: '1s' }}>💛</span>
           </div>
           
-          <h1 className="title">Hello, {HER_NAME} 💛</h1>
+          <h1 className="title">Bună, {HER_NAME} 💛</h1>
           
           <p className="subtitle">
-            I made something special just for you, darling...
+            Am creat ceva special pentru tine, draga mea...
           </p>
 
           <div className="flower-decoration">
@@ -63,7 +63,7 @@ const IntroPage: React.FC<IntroPageProps> = ({ onNext }) => {
 
           {showButton && (
             <button className="btn fade-in" onClick={onNext}>
-              Let's Begin 💕
+              Hai să începem 💕
             </button>
           )}
         </div>

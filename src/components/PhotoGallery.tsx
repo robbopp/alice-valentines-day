@@ -5,28 +5,27 @@ interface PhotoGalleryProps {
   onNext: () => void;
 }
 
-// TODO: Replace these with actual photos of you two!
-// Add your images to the public/photos folder and update the paths
+// Adaugă pozele voastre în public/photos și actualizează textele
 const photos = [
   {
     src: '/photos/photo1.jpg',
-    caption: 'Our first adventure together 💛'
+    caption: 'Prima noastră aventură împreună 💛'
   },
   {
     src: '/photos/photo2.jpg', 
-    caption: 'That time we...'
+    caption: 'Atunci când...'
   },
   {
     src: '/photos/photo3.jpg',
-    caption: 'One of my favorite memories 🌷'
+    caption: 'Una dintre amintirile mele preferate 🌷'
   },
   {
     src: '/photos/photo4.jpg',
-    caption: 'You make everything better ✨'
+    caption: 'Tu faci totul mai frumos ✨'
   },
   {
     src: '/photos/photo5.jpg',
-    caption: 'Forever grateful for you 💕'
+    caption: 'Mereu recunoscător pentru tine 💕'
   }
 ];
 
@@ -58,7 +57,7 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ onNext }) => {
 
   return (
     <div className="gallery-page page-container">
-      <h1 className="title">Our Memories 📸</h1>
+      <h1 className="title">Amintirile Noastre 📸</h1>
       
       <div className="gallery-container">
         <div className={`photo-frame ${direction ? `slide-${direction}` : ''}`}>
@@ -104,7 +103,7 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ onNext }) => {
 
       {isLastPhoto && (
         <button className="btn fade-in" onClick={onNext}>
-          Let's Play! 🎮
+          Hai să ne jucăm! 🎮
         </button>
       )}
     </div>
