@@ -3,6 +3,7 @@
 A cute web app to ask that special someone to be your Valentine!
 
 ## Features
+
 - 🌷 Beautiful yellow/floral theme
 - 📸 Photo gallery of your memories together
 - 🎮 Fun mini-games (Catch the Kinder, Love Trivia)
@@ -12,12 +13,15 @@ A cute web app to ask that special someone to be your Valentine!
 ## Setup
 
 ### 1. Install dependencies
+
 ```bash
 npm install
 ```
 
 ### 2. Add your photos
+
 Put your photos in `public/photos/`:
+
 - photo1.jpg
 - photo2.jpg
 - photo3.jpg
@@ -29,6 +33,7 @@ Put your photos in `public/photos/`:
 Edit these files to personalize:
 
 **Her name** - Update `HER_NAME` in:
+
 - `src/components/IntroPage.tsx`
 - `src/components/TheQuestion.tsx`
 - `src/components/Celebration.tsx`
@@ -40,6 +45,7 @@ Edit these files to personalize:
 **Your signature** - Edit `src/components/Celebration.tsx`
 
 ### 4. Run locally
+
 ```bash
 npm start
 ```
@@ -67,3 +73,5 @@ npm start
 ## Made with 💛
 
 For someone special!
+
+# Made with OpenClaw
