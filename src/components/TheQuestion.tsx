@@ -8,9 +8,10 @@ interface TheQuestionProps {
 const HER_NAME = "Alice";
 
 const TheQuestion: React.FC<TheQuestionProps> = ({ onYes }) => {
-  const [noButtonPos, setNoButtonPos] = useState({ x: 0, y: 0 });
+  const [noButtonStyle, setNoButtonStyle] = useState<React.CSSProperties>({});
   const [noClickCount, setNoClickCount] = useState(0);
   const [yesScale, setYesScale] = useState(1);
+  const [isEscaping, setIsEscaping] = useState(false);
 
   const funnyMessages = [
     "Ești sigură, draga mea? 🥺",
@@ -20,30 +21,45 @@ const TheQuestion: React.FC<TheQuestionProps> = ({ onYes }) => {
     "Nu e o opțiune, draga mea! 😤",
     "Încearcă să apeși Da 😏",
     "Butonul e timid! 🙈",
-    "Nu poți apăsa asta! ✨"
+    "Nu poți apăsa asta! ✨",
+    "Haha, nu mă prinzi! 🏃",
+    "Mai încearcă! 😜"
   ];
 
   const [message, setMessage] = useState<string | null>(null);
 
   const moveNoButton = useCallback(() => {
-    // Get random position within viewport
-    const maxX = window.innerWidth - 100;
-    const maxY = window.innerHeight - 50;
+    setIsEscaping(true);
     
-    const newX = Math.random() * maxX - maxX / 2;
-    const newY = Math.random() * maxY - maxY / 2;
+    // Random position anywhere on screen with padding
+    const padding = 20;
+    const buttonWidth = 100;
+    const buttonHeight = 50;
     
-    setNoButtonPos({ x: newX, y: newY });
+    const maxX = window.innerWidth - buttonWidth - padding;
+    const maxY = window.innerHeight - buttonHeight - padding;
+    
+    const newX = padding + Math.random() * (maxX - padding);
+    const newY = padding + Math.random() * (maxY - padding);
+    
+    setNoButtonStyle({
+      position: 'fixed',
+      left: `${newX}px`,
+      top: `${newY}px`,
+      transform: 'none',
+      zIndex: 1000,
+    });
+    
     setNoClickCount(prev => prev + 1);
     
     // Show funny message
     setMessage(funnyMessages[Math.min(noClickCount, funnyMessages.length - 1)]);
     
     // Make Yes button bigger each time No is attempted
-    setYesScale(prev => Math.min(prev + 0.1, 2));
+    setYesScale(prev => Math.min(prev + 0.15, 2.5));
     
     // Clear message after a moment
-    setTimeout(() => setMessage(null), 1500);
+    setTimeout(() => setMessage(null), 2000);
   }, [noClickCount, funnyMessages]);
 
   return (
@@ -84,23 +100,35 @@ const TheQuestion: React.FC<TheQuestionProps> = ({ onYes }) => {
             Da! 💛
           </button>
           
-          <button 
-            className="btn btn-no"
-            style={{ 
-              transform: `translate(${noButtonPos.x}px, ${noButtonPos.y}px)`,
-            }}
-            onMouseEnter={moveNoButton}
-            onClick={moveNoButton}
-            onTouchStart={moveNoButton}
-          >
-            Nu
-          </button>
+          {!isEscaping && (
+            <button 
+              className="btn btn-no"
+              onMouseEnter={moveNoButton}
+              onClick={moveNoButton}
+              onTouchStart={moveNoButton}
+            >
+              Nu
+            </button>
+          )}
         </div>
 
         {message && (
           <p className="funny-message fade-in">{message}</p>
         )}
       </div>
+
+      {/* Escaped button - positioned absolutely on screen */}
+      {isEscaping && (
+        <button 
+          className="btn btn-no escaped-no"
+          style={noButtonStyle}
+          onMouseEnter={moveNoButton}
+          onClick={moveNoButton}
+          onTouchStart={moveNoButton}
+        >
+          Nu
+        </button>
+      )}
     </div>
   );
 };

@@ -76,8 +76,19 @@
 }
 
 .btn-no {
-  transition: transform 0.15s ease;
+  transition: all 0.15s ease;
   z-index: 1;
+}
+
+.escaped-no {
+  transition: left 0.1s ease, top 0.1s ease;
+  animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
 }
 
 .funny-message {
