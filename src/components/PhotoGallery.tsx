@@ -8,23 +8,23 @@ interface PhotoGalleryProps {
 // Adaugă pozele voastre în public/photos și actualizează textele
 const photos = [
   {
-    src: '/photos/photo1.jpg',
+    src: `${process.env.PUBLIC_URL}/photos/photo1.jpg`,
     caption: 'Prima noastră aventură împreună ❤️'
   },
   {
-    src: '/photos/photo2.jpg', 
+    src: `${process.env.PUBLIC_URL}/photos/photo2.jpg`, 
     caption: 'Cea mai minunată din univers! ❤️'
   },
   {
-    src: '/photos/photo3.jpg',
+    src: `${process.env.PUBLIC_URL}/photos/photo3.jpg`,
     caption: 'Una dintre amintirile mele preferate 🌷'
   },
   {
-    src: '/photos/photo4.jpg',
+    src: `${process.env.PUBLIC_URL}/photos/photo4.jpg`,
     caption: 'Tu faci totul mai frumos ✨'
   },
   {
-    src: '/photos/photo5.jpg',
+    src: `${process.env.PUBLIC_URL}/photos/photo5.jpg`,
     caption: 'Mereu recunoscător pentru tine 💕'
   }
 ];
