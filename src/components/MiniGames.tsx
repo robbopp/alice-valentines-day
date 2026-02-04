@@ -10,19 +10,19 @@ type GameType = 'menu' | 'catch' | 'trivia' | 'complete';
 // Personalizează întrebările despre relația voastră!
 const triviaQuestions = [
   {
-    question: "Care e mâncarea italiană preferată să o împărțim?",
-    options: ["Pizza", "Paste", "Risotto", "Lasagna"],
+    question: "Care e mâncarea noastră italiană preferată?",
+    options: ["Pizza", "Paste", "Gelato", "Lasagna"],
     correct: 0 // Schimbă cu răspunsul corect
   },
   {
     question: "Unde am vrea să călătorim împreună?",
-    options: ["Paris", "Tokyo", "Bali", "Toate!"],
+    options: ["Paris", "Maldive", "Bali", "Toate!"],
     correct: 3
   },
   {
-    question: "Ce floare îți amintește de mine?",
-    options: ["Trandafir", "Bujor", "Lalea", "Floarea-soarelui"],
-    correct: 1 // Bujor - preferata ei!
+    question: "Cât de mult ma iubești?",
+    options: ["Infinit", "Mult", "Cel mai mult", "Foarte mult"],
+    correct: 2 // Bujor - preferata ei!
   }
 ];
 
@@ -166,13 +166,13 @@ const CatchGame: React.FC<CatchGameProps> = ({ onComplete }) => {
           {won ? (
             <>
               <span className="result-emoji">🎉</span>
-              <p>Bravo! Le-ai prins pe toate!</p>
+              <p>Bravo, iubirică! Le-ai prins pe toate!</p>
               <button className="btn" onClick={onComplete}>Continuă</button>
             </>
           ) : (
             <>
               <span className="result-emoji">😅</span>
-              <p>Aproape! Mai încerci?</p>
+              <p>Aproape! Mai încerci bebică?</p>
               <button className="btn" onClick={() => {
                 setScore(0);
                 setTimeLeft(15);
@@ -224,7 +224,7 @@ const TriviaGame: React.FC<TriviaGameProps> = ({ onComplete }) => {
 
   return (
     <div className="trivia-game">
-      <h2 className="game-title">Trivia Dragostei 💕</h2>
+      <h2 className="game-title">Întrebarile Dragostei 💕</h2>
       <p className="question-counter">Întrebarea {currentQ + 1}/{triviaQuestions.length}</p>
       
       <div className="question-card">
@@ -246,9 +246,9 @@ const TriviaGame: React.FC<TriviaGameProps> = ({ onComplete }) => {
         {answered && (
           <div className="answer-feedback fade-in">
             {isCorrect ? (
-              <p className="feedback-correct">💛 Mă cunoști atât de bine!</p>
+              <p className="feedback-correct">Bravo inimioara mea!!💕</p>
             ) : (
-              <p className="feedback-wrong">Oops! Dar e în regulă 💕</p>
+              <p className="feedback-wrong">Upsic, nu chiar</p>
             )}
             
             {isLastQuestion ? (
