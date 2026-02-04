@@ -93,7 +93,6 @@ body {
 .btn-no {
   background: linear-gradient(135deg, #ccc 0%, #aaa 100%);
   color: var(--text-dark);
-  position: absolute;
 }
 
 /* Floating flowers animation */
