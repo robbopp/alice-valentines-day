@@ -1,0 +1,44 @@
+.letter-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.letter-content {
+  text-align: center;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.letter-header {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.letter-body {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.letter-body p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+  white-space: pre-line;
+}
+
+.letter-page .title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
