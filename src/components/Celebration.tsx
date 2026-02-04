@@ -48,7 +48,7 @@ const Celebration: React.FC = () => {
 
         <div className="love-message">
           <p>
-            {HER_NAME}, draga mea, tu faci fiecare zi mai frumoasă. ❤️
+            Iubirea mea, tu faci fiecare zi mai frumoasă. ❤️
           </p>
           <p>
             Abia aștept să petrecem Valentine's Day împreună!

@@ -84,7 +84,7 @@ const TheQuestion: React.FC<TheQuestionProps> = ({ onYes }) => {
         <div className="flower-crown">🌷💐🌷</div>
         
         <h1 className="title question-title">
-          {HER_NAME}, draga mea... 💛
+          Draga mea... 💛
         </h1>
         
         <p className="question-text">
