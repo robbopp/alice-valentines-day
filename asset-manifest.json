@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/alice-valentines-day/static/css/main.d1029d2d.css",
-    "main.js": "/alice-valentines-day/static/js/main.4677dc59.js",
+    "main.css": "/alice-valentines-day/static/css/main.2cfc4e3e.css",
+    "main.js": "/alice-valentines-day/static/js/main.f5bf9665.js",
     "static/js/453.f13e9066.chunk.js": "/alice-valentines-day/static/js/453.f13e9066.chunk.js",
     "index.html": "/alice-valentines-day/index.html",
-    "main.d1029d2d.css.map": "/alice-valentines-day/static/css/main.d1029d2d.css.map",
-    "main.4677dc59.js.map": "/alice-valentines-day/static/js/main.4677dc59.js.map",
+    "main.2cfc4e3e.css.map": "/alice-valentines-day/static/css/main.2cfc4e3e.css.map",
+    "main.f5bf9665.js.map": "/alice-valentines-day/static/js/main.f5bf9665.js.map",
     "453.f13e9066.chunk.js.map": "/alice-valentines-day/static/js/453.f13e9066.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d1029d2d.css",
-    "static/js/main.4677dc59.js"
+    "static/css/main.2cfc4e3e.css",
+    "static/js/main.f5bf9665.js"
   ]
 }
