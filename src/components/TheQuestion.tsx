@@ -29,38 +29,35 @@ const TheQuestion: React.FC<TheQuestionProps> = ({ onYes }) => {
   const [message, setMessage] = useState<string | null>(null);
 
   const moveNoButton = useCallback(() => {
-    setIsEscaping(true);
-    
-    // Random position anywhere on screen with padding
-    const padding = 20;
-    const buttonWidth = 100;
-    const buttonHeight = 50;
-    
-    const maxX = window.innerWidth - buttonWidth - padding;
-    const maxY = window.innerHeight - buttonHeight - padding;
-    
-    const newX = padding + Math.random() * (maxX - padding);
-    const newY = padding + Math.random() * (maxY - padding);
-    
-    setNoButtonStyle({
-      position: 'fixed',
-      left: `${newX}px`,
-      top: `${newY}px`,
-      transform: 'none',
-      zIndex: 1000,
-    });
-    
-    setNoClickCount(prev => prev + 1);
-    
-    // Show funny message
-    setMessage(funnyMessages[Math.min(noClickCount, funnyMessages.length - 1)]);
-    
-    // Make Yes button bigger each time No is attempted
-    setYesScale(prev => Math.min(prev + 0.15, 2.5));
-    
-    // Clear message after a moment
-    setTimeout(() => setMessage(null), 2000);
-  }, [noClickCount, funnyMessages]);
+  setIsEscaping(true);
+
+  const padding = 20;
+  const buttonWidth = 100;
+  const buttonHeight = 50;
+
+  const maxX = window.innerWidth - buttonWidth - padding;
+  const maxY = window.innerHeight - buttonHeight - padding;
+
+  const newX = padding + Math.random() * (maxX - padding);
+  const newY = padding + Math.random() * (maxY - padding);
+
+  setNoButtonStyle({
+    position: 'fixed',
+    left: `${newX}px`,
+    top: `${newY}px`,
+    transform: 'none',
+    zIndex: 1000,
+  });
+
+  setNoClickCount(prev => {
+    const newCount = prev + 1;
+    setMessage(funnyMessages[Math.min(newCount - 1, funnyMessages.length - 1)]);
+    return newCount;
+  });
+
+  setYesScale(prev => Math.min(prev + 0.15, 2.5));
+}, [funnyMessages]);
+
 
   return (
     <div className="question-page page-container">
@@ -84,11 +81,11 @@ const TheQuestion: React.FC<TheQuestionProps> = ({ onYes }) => {
         <div className="flower-crown">🌷💐🌷</div>
         
         <h1 className="title question-title">
-          Draga mea... 💛
+          Darling, 💛
         </h1>
         
         <p className="question-text">
-          Vrei să fii Valentine-ul meu? 💛💕💛
+          Will you be my Valentine? 🥹❤️💕💛
         </p>
 
         <div className="question-buttons">
@@ -103,7 +100,6 @@ const TheQuestion: React.FC<TheQuestionProps> = ({ onYes }) => {
           {!isEscaping && (
             <button 
               className="btn btn-no"
-              onMouseEnter={moveNoButton}
               onClick={moveNoButton}
               onTouchStart={moveNoButton}
             >
@@ -122,7 +118,6 @@ const TheQuestion: React.FC<TheQuestionProps> = ({ onYes }) => {
         <button 
           className="btn btn-no escaped-no"
           style={noButtonStyle}
-          onMouseEnter={moveNoButton}
           onClick={moveNoButton}
           onTouchStart={moveNoButton}
         >

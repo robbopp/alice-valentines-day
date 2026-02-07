@@ -46,12 +46,12 @@ const IntroPage: React.FC<IntroPageProps> = ({ onNext }) => {
       {showContent && (
         <div className="intro-content fade-in">
           <div className="intro-hearts">
-            <span className="heart">❤️</span>
-            <span className="heart" style={{ animationDelay: '0.5s' }}>❤️</span>
-            <span className="heart" style={{ animationDelay: '1s' }}>❤️</span>
+            <span className="heart">💛</span>
+            <span className="heart" style={{ animationDelay: '0.5s' }}>💛</span>
+            <span className="heart" style={{ animationDelay: '1s' }}>💛</span>
           </div>
           
-          <h1 className="title">Bună, {HER_NAME} ❤️</h1>
+          <h1 className="title">{HER_NAME} ❤️</h1>
           
           <p className="subtitle">
             Am creat ceva special pentru tine, draga mea...

@@ -103,7 +103,7 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ onNext }) => {
 
       {isLastPhoto && (
         <button className="btn fade-in" onClick={onNext}>
-          Hai să ne jucăm! 🎮
+          Mai departe ➡
         </button>
       )}
     </div>
